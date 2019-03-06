@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block heading %}
+Login Page
+{% endblock %}
+
+{% block body %}
+{% if message %}
+<div class="alert alert-info">
+  <strong>{{ message }}</strong>
+</div>
+{% endif %}
+{% if message_success %}
+<div class="alert alert-success">
+  <strong>{{ message_success }}</strong>
+</div>
+{% endif %}
+{% if message_alert %}
+<div class="alert alert-warning">
+  <strong>{{ message_alert }}</strong> 
+</div>
+{% endif %}
+<div class="form-group">
+<form action="{{ url_for('login') }}" method="post" style=width:25%>
+    <label for="username"> username: </label>
+    <input type="text" class="form-control" name="username" id="username">
+    <label for="password"> password: </label>
+    <input type="password" class="form-control" name="password" id="passwrod">
+    <br>
+    <div>
+    <div class="form-group">
+    <button class="btn btn-primary">LogIn</button>
+    </form>
+	<!-- Default form login -->
+<form class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Sign in</p>
+
+    <!-- Email -->
+    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+    <!-- Password -->
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+
+    <div class="d-flex justify-content-around">
+        <div>
+            <!-- Remember me -->
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+            </div>
+        </div>
+        <div>
+            <!-- Forgot password -->
+            <a href="">Forgot password?</a>
+        </div>
+    </div>
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+    <!-- Register -->
+    <p>Not a member?
+        <a href="">Register</a>
+    </p>
+
+    <!-- Social login -->
+    <p>or sign in with:</p>
+
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <i class="fab fa-github"></i>
+    </a>
+
+</form>
+<!-- Default form login -->
+
+
+</div>
+<a href="{{ url_for('registration') }}"> Register Yourself </a>
+{% endblock %}
